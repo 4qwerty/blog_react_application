@@ -4,7 +4,8 @@ import AddBoxIcon from "@mui/icons-material/AddBox";
 import {Button} from "@mui/material";
 import AddPostModal from "../Modal/AddPostModal";
 import {observer} from "mobx-react-lite";
-import {ModalStore} from "../../store/modal";
+import modal from "../../store/modal";
+import UpdatePostModal from "../Modal/UpdatePostModal";
 
 
 const HomePage = observer(() => {
@@ -13,13 +14,14 @@ const HomePage = observer(() => {
             <Button
                 variant="outlined"
                 startIcon={<AddBoxIcon />}
-                onClick={() => ModalStore.openAddPostModal()}
+                onClick={() => modal.openAddPostModal()}
             >
                 Add post
             </Button>
             <PostsList/>
 
             <AddPostModal/>
+            <UpdatePostModal/>
         </div>
     );
 }) ;

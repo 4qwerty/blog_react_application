@@ -2,9 +2,14 @@
 import modal from '../../store/modal'
 import { observer } from 'mobx-react-lite'
 import {Box, Modal} from "@mui/material";
-import AddPostForm from "../Form/AddPostForm/AddPostForm";
+import UpdatePostForm from "../Form/updatePostForm/UpdatePostForm";
+import {PostModel} from "../../types/Posts";
 
-const AddPostModal = observer(() => {
+export interface PostProps {
+    post: PostModel
+}
+
+const UpdatePostModal = observer(() => {
     const style = {
         position: 'absolute' as 'absolute',
         top: '50%',
@@ -18,16 +23,16 @@ const AddPostModal = observer(() => {
 
     return (
         <Modal
-            open={modal.isOpenAddPostModal}
-            onClose={() => modal.closeAddPostModal()}
+            open={modal.isOpenEditPostModal}
+            onClose={() => modal.closeEditPostModal()}
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
         >
             <Box sx={style}>
-                <AddPostForm/>
+                <UpdatePostForm />
             </Box>
         </Modal>
     )
 })
 
-export default AddPostModal
+export default UpdatePostModal

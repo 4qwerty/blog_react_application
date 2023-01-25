@@ -28,8 +28,6 @@ const PostsList: React.FC = observer(() => {
                     </Grid>
                 ))}
             </Grid>
-
-
         </>
 
     );

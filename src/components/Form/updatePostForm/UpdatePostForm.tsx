@@ -1,19 +1,18 @@
 import React from 'react';
-import * as Yup from 'yup'
 import {observer} from "mobx-react-lite";
 import {useFormik} from "formik";
-import Form from 'react-bootstrap/Form'
-import modal from "../../../store/modal";
+import * as Yup from "yup";
 import posts from "../../../store/posts";
+import modal from "../../../store/modal";
+import Form from "react-bootstrap/Form";
 import {Button} from "@mui/material";
-import './AddPostForm.css'
 
-const AddPostForm = observer(() => {
-
+const UpdatePostForm = observer(() => {
+    const post = modal.postToEdit
     const formik = useFormik({
         initialValues: {
-            title: '',
-            body: '',
+            title: post?.title,
+            body: post?.body,
         },
 
         validationSchema: Yup.object({
@@ -26,11 +25,11 @@ const AddPostForm = observer(() => {
         }),
 
         onSubmit: (data) => {
-                posts.createPosts(data).then(() => {
+            posts.updatePosts(data, post?.id).then(() => {
                 posts.getPosts()
             })
 
-            modal.closeAddPostModal()
+            modal.closeEditPostModal()
             modal.openSuccessModal()
         },
     })
@@ -70,6 +69,6 @@ const AddPostForm = observer(() => {
             </Button>
         </Form>
     );
-});
+});;
 
-export default AddPostForm;
+export default UpdatePostForm;

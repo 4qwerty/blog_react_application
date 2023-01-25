@@ -64,6 +64,18 @@ class Posts {
                 console.log(err);
             });
     }
+
+    async updatePosts(data: { title: string | undefined; body: string | undefined }, id: number | undefined) {
+        await fetch(`https://blog-api-t6u0.onrender.com/posts/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({...data}),
+        }).catch((error) => {
+            console.error('Error:', error);
+        });
+    }
 }
 
 export default new Posts()
