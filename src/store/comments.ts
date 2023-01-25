@@ -1,6 +1,6 @@
 import { makeAutoObservable } from 'mobx'
-import {ExtendedPostModel, PostModel} from '../models/Posts'
-import {CommentsModel} from "../models/Comments";
+import {ExtendedPostModel, PostModel} from '../types/Posts'
+import {CommentsModel} from "../types/Comments";
 
 class Comments {
     constructor() {

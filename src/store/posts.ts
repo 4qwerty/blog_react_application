@@ -1,6 +1,11 @@
 import { makeAutoObservable } from 'mobx'
-import {ExtendedPostModel, PostModel} from '../models/Posts'
+import {ExtendedPostModel, PostModel} from '../types/Posts'
 
+
+interface Post {
+    title: string,
+    body: string
+}
 class Posts {
     constructor() {
         makeAutoObservable(this)
@@ -9,7 +14,7 @@ class Posts {
     posts: PostModel[] = []
     extendedPost: ExtendedPostModel | null = null
 
-    async createPosts(data: PostModel) {
+    async createPosts(data: Post) {
         await fetch(`https://blog-api-t6u0.onrender.com/posts`, {
             method: 'POST',
             headers: {
@@ -21,7 +26,12 @@ class Posts {
         });
     }
     getPosts() {
-        fetch('https://blog-api-t6u0.onrender.com/posts')
+        fetch('https://blog-api-t6u0.onrender.com/posts', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
             .then(res => res.json())
             .then(data => {
                 this.posts = data
@@ -32,8 +42,13 @@ class Posts {
     }
 
     deletePost(id: number) {
-        fetch(`https://blog-api-t6u0.onrender.com/posts/${id}`)
-            .then(res => res.json())
+        fetch(`https://blog-api-t6u0.onrender.com/posts/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+            .then(res => console.log(res))
             .catch(function(err) {
                 console.log(err);
             });
