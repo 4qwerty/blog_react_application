@@ -1,0 +1,11 @@
+
+.comment-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+}
+.post-info {
+    margin: 20px;
+}

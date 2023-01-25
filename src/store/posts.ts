@@ -54,8 +54,8 @@ class Posts {
             });
     }
 
-    async retrievePost(id: number) {
-        await fetch(`https://blog-api-t6u0.onrender.com/posts/${id}?_embed=comments`)
+    retrievePost(id: number) {
+        fetch(`https://blog-api-t6u0.onrender.com/posts/${id}?_embed=comments`)
             .then(res => res.json())
             .then(data => {
                 this.extendedPost = data

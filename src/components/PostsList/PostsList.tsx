@@ -2,9 +2,7 @@ import React, {useEffect} from 'react';
 import { observer } from 'mobx-react-lite'
 import posts from '../../store/posts'
 import PostCard from "../PostCard/PostCard";
-import {Button, Grid} from "@mui/material";
-import AddBoxIcon from '@mui/icons-material/AddBox';
-import AddPostModal from "../Modal/AddPostModal";
+import {Grid} from "@mui/material";
 
 const PostsList: React.FC = observer(() => {
     const postData = posts.posts

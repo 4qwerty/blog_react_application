@@ -13,17 +13,25 @@ import {
     Typography
 } from "@mui/material";
 import modal from "../../store/modal";
+import {useNavigate} from "react-router-dom";
 
 interface TicketProps {
     post: PostModel
 }
 
-const removePost = (id: number) => {
-     posts.deletePost(id)
-     posts.getPosts()
-}
-
 const PostCard: React.FC<TicketProps> = observer(({ post }) => {
+    const removePost = (id: number) => {
+        posts.deletePost(id)
+        posts.getPosts()
+    }
+
+    const navigate = useNavigate()
+    const openComment = async (id: number) => {
+        navigate("/comment", {
+            state: id,
+        })
+    }
+
     return (
        <>
            <Card sx={{ maxWidth: 400 }}>
@@ -36,7 +44,11 @@ const PostCard: React.FC<TicketProps> = observer(({ post }) => {
                    </Typography>
                </CardContent>
                <CardActions>
-                   <Button variant="outlined" endIcon={<CommentIcon />}>
+                   <Button
+                       variant="outlined"
+                       endIcon={<CommentIcon />}
+                       onClick={() => openComment(post.id)}
+                   >
                        Comments
                    </Button>
                    <IconButton

@@ -10,5 +10,5 @@ export interface ExtendedPostModel {
     id: number,
     title: string,
     body: string
-    comments?: CommentsModel[]
+    comments: CommentsModel[]
 }

@@ -1,11 +1,11 @@
 import React from 'react';
-import HomePage from "./components/HomePage/HomePage";
 import "bootstrap/dist/css/bootstrap.min.css";
+import AppRouter from "./components/AppRouter/AppRouter";
 
 function App() {
   return (
     <div className="App">
-      <HomePage/>
+        <AppRouter/>
     </div>
   );
 }
