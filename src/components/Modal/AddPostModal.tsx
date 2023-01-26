@@ -1,8 +1,8 @@
 import modal from '../../store/modal'
 import { observer } from 'mobx-react-lite'
-import {Box, Modal} from "@mui/material";
+import { Box, Modal } from '@mui/material'
 import './modal.css'
-import AddPostForm from "../Form/AddPostForm/AddPostForm";
+import AddPostForm from '../Form/AddPostForm/AddPostForm'
 
 const AddPostModal = observer(() => {
     return (
@@ -13,7 +13,7 @@ const AddPostModal = observer(() => {
             aria-describedby="modal-modal-description"
         >
             <Box className="modal-style">
-                <AddPostForm/>
+                <AddPostForm />
             </Box>
         </Modal>
     )

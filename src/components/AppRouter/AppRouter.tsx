@@ -4,7 +4,6 @@ import { publicRotes } from '../../router/routes'
 
 const AppRouter = () => {
     return (
-
         <Routes>
             {publicRotes.map(({ path, Component }) => (
                 <Route key={path} path={path} element={<Component />}></Route>

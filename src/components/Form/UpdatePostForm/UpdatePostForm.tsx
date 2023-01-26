@@ -1,10 +1,10 @@
-import React from 'react';
-import {observer} from "mobx-react-lite";
-import {useFormik} from "formik";
-import posts from "../../../store/posts";
-import modal from "../../../store/modal";
-import Form from "react-bootstrap/Form";
-import {Button} from "@mui/material";
+import React from 'react'
+import { observer } from 'mobx-react-lite'
+import { useFormik } from 'formik'
+import posts from '../../../store/posts'
+import modal from '../../../store/modal'
+import Form from 'react-bootstrap/Form'
+import { Button } from '@mui/material'
 
 const UpdatePostForm = observer(() => {
     const post = modal.postToEdit
@@ -44,11 +44,9 @@ const UpdatePostForm = observer(() => {
                 value={formik.values.body}
             />
 
-            <Button type="submit">
-                Submit
-            </Button>
+            <Button type="submit">Submit</Button>
         </Form>
-    );
-});
+    )
+})
 
-export default UpdatePostForm;
+export default UpdatePostForm

@@ -1,12 +1,12 @@
-import React from 'react';
-import {observer} from "mobx-react-lite";
-import {useFormik} from "formik";
-import * as Yup from "yup";
-import Form from "react-bootstrap/Form";
-import {Button} from "@mui/material";
-import comment from "../../../store/comments";
-import posts from "../../../store/posts";
-import modal from "../../../store/modal";
+import React from 'react'
+import { observer } from 'mobx-react-lite'
+import { useFormik } from 'formik'
+import * as Yup from 'yup'
+import Form from 'react-bootstrap/Form'
+import { Button } from '@mui/material'
+import comment from '../../../store/comments'
+import posts from '../../../store/posts'
+import modal from '../../../store/modal'
 
 const AddCommentForm = observer(() => {
     const post = posts.extendedPost
@@ -32,7 +32,7 @@ const AddCommentForm = observer(() => {
         }),
 
         onSubmit: (data) => {
-            const commentData = {postId, ...data}
+            const commentData = { postId, ...data }
 
             comment.createComment(commentData)
             modal.closeAddCommentModal()
@@ -83,11 +83,9 @@ const AddCommentForm = observer(() => {
                 <div className="required">{formik.errors.body}</div>
             )}
 
-            <Button type="submit">
-                Submit
-            </Button>
+            <Button type="submit">Submit</Button>
         </Form>
-    );
-});
+    )
+})
 
-export default AddCommentForm;
+export default AddCommentForm

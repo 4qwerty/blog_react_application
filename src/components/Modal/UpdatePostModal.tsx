@@ -1,10 +1,9 @@
-
 import modal from '../../store/modal'
 import { observer } from 'mobx-react-lite'
-import {Box, Modal} from "@mui/material";
-import "./modal.css"
-import UpdatePostForm from "../Form/UpdatePostForm/UpdatePostForm";
-import {PostModel} from "../../types/Posts";
+import { Box, Modal } from '@mui/material'
+import './modal.css'
+import UpdatePostForm from '../Form/UpdatePostForm/UpdatePostForm'
+import { PostModel } from '../../types/Posts'
 
 export interface PostProps {
     post: PostModel

@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 import * as Yup from 'yup'
-import {observer} from "mobx-react-lite";
-import {useFormik} from "formik";
+import { observer } from 'mobx-react-lite'
+import { useFormik } from 'formik'
 import Form from 'react-bootstrap/Form'
-import modal from "../../../store/modal";
-import posts from "../../../store/posts";
-import {Button} from "@mui/material";
+import modal from '../../../store/modal'
+import posts from '../../../store/posts'
+import { Button } from '@mui/material'
 import './add-post-form.css'
 
 const AddPostForm = observer(() => {
@@ -60,11 +60,9 @@ const AddPostForm = observer(() => {
                 <div className="required">{formik.errors.body}</div>
             )}
 
-            <Button type="submit">
-                Submit
-            </Button>
+            <Button type="submit">Submit</Button>
         </Form>
-    );
-});
+    )
+})
 
-export default AddPostForm;
+export default AddPostForm

@@ -1,10 +1,8 @@
 import { makeAutoObservable } from 'mobx'
-import {ExtendedPostModel, PostModel} from '../types/Posts'
-import {CommentsModel} from "../types/Comments";
-
+import { ExtendedPostModel, PostModel } from '../types/Posts'
 
 interface Post {
-    title: string,
+    title: string
     body: string
 }
 class Posts {
@@ -17,7 +15,7 @@ class Posts {
         id: 0,
         title: '',
         body: '',
-        comments: []
+        comments: [],
     }
 
     createPosts(data: Post) {
@@ -26,10 +24,10 @@ class Posts {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({...data}),
+            body: JSON.stringify({ ...data }),
         }).catch((error) => {
-            console.error('Error:', error);
-        });
+            console.error('Error:', error)
+        })
     }
     getPosts() {
         fetch('https://blog-api-t6u0.onrender.com/posts', {
@@ -38,13 +36,13 @@ class Posts {
                 'Content-Type': 'application/json',
             },
         })
-            .then(res => res.json())
-            .then(data => {
+            .then((res) => res.json())
+            .then((data) => {
                 this.posts = data
             })
-            .catch(function(err) {
-                console.log(err);
-            });
+            .catch(function (err) {
+                console.log(err)
+            })
     }
 
     deletePost(id: number) {
@@ -54,33 +52,36 @@ class Posts {
                 'Content-Type': 'application/json',
             },
         })
-            .then(res => console.log(res))
-            .catch(function(err) {
-                console.log(err);
-            });
+            .then((res) => console.log(res))
+            .catch(function (err) {
+                console.log(err)
+            })
     }
 
     retrievePost(id: number) {
         fetch(`https://blog-api-t6u0.onrender.com/posts/${id}?_embed=comments`)
-            .then(res => res.json())
-            .then(data => {
+            .then((res) => res.json())
+            .then((data) => {
                 this.extendedPost = data
             })
-            .catch(function(err) {
-                console.log(err);
-            });
+            .catch(function (err) {
+                console.log(err)
+            })
     }
 
-    updatePosts(data: { title: string | undefined; body: string | undefined }, id: number | undefined) {
+    updatePosts(
+        data: { title: string | undefined; body: string | undefined },
+        id: number | undefined
+    ) {
         fetch(`https://blog-api-t6u0.onrender.com/posts/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({...data}),
+            body: JSON.stringify({ ...data }),
         }).catch((error) => {
-            console.error('Error:', error);
-        });
+            console.error('Error:', error)
+        })
     }
 }
 

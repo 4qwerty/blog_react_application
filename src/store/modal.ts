@@ -1,5 +1,5 @@
-import {makeAutoObservable, observable} from 'mobx'
-import {PostModel} from "../types/Posts";
+import { makeAutoObservable } from 'mobx'
+import { PostModel } from '../types/Posts'
 
 class Modal {
     constructor() {
@@ -10,7 +10,6 @@ class Modal {
     isOpenEditPostModal = false
     isOpenAddCommentModal = false
     postToEdit: PostModel | null = null
-
 
     openAddPostModal() {
         this.isOpenAddPostModal = true

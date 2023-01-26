@@ -1,6 +1,5 @@
 import { makeAutoObservable } from 'mobx'
-import {CommentsModel} from "../types/Comments";
-import {PostModel} from "../types/Posts";
+import { CommentsModel } from '../types/Comments'
 
 class Comments {
     constructor() {
@@ -13,10 +12,10 @@ class Comments {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({...data}),
+            body: JSON.stringify({ ...data }),
         }).catch((error) => {
-            console.error('Error:', error);
-        });
+            console.error('Error:', error)
+        })
     }
 }
 
