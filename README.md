@@ -8,6 +8,3 @@ In the project directory, you can run:
 
   Runs the app in the development mode.\
   Open [http://localhost:3000/home](http://localhost:3000/home) to view it in the browser.
-
-## Technologies:
-React, Redux, Express, MongoDB, less.
