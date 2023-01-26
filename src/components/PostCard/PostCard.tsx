@@ -22,7 +22,6 @@ interface TicketProps {
 const PostCard: React.FC<TicketProps> = observer(({ post }) => {
     const removePost = (id: number) => {
         posts.deletePost(id)
-        posts.getPosts()
     }
 
     const navigate = useNavigate()

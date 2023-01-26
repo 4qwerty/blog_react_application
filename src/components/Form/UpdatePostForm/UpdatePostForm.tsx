@@ -15,12 +15,8 @@ const UpdatePostForm = observer(() => {
         },
 
         onSubmit: (data) => {
-            posts.updatePosts(data, post?.id).then(() => {
-                posts.getPosts()
-            })
-
+            posts.updatePosts(data, post?.id)
             modal.closeEditPostModal()
-            modal.openSuccessModal()
         },
     })
 

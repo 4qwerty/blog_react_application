@@ -1,0 +1,9 @@
+.home-page-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-post-button {
+    width: 150px;
+}

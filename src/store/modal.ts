@@ -8,7 +8,6 @@ class Modal {
 
     isOpenAddPostModal = false
     isOpenEditPostModal = false
-    isOpenSuccessModal = false
     isOpenAddCommentModal = false
     postToEdit: PostModel | null = null
 
@@ -25,12 +24,6 @@ class Modal {
     }
     closeEditPostModal() {
         this.isOpenEditPostModal = false
-    }
-    openSuccessModal() {
-        this.isOpenSuccessModal = true
-    }
-    closeSuccessModal() {
-        this.isOpenSuccessModal = false
     }
     openAddCommentModal() {
         this.isOpenAddCommentModal = true

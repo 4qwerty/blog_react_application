@@ -25,12 +25,8 @@ const AddPostForm = observer(() => {
         }),
 
         onSubmit: (data) => {
-            posts.createPosts(data).then(() => {
-                posts.getPosts()
-            })
-
+            posts.createPosts(data)
             modal.closeAddPostModal()
-            modal.openSuccessModal()
         },
     })
 

@@ -9,7 +9,7 @@ interface CommentProps {
 const CommentCard: React.FC<CommentProps> = observer(({comment}) => {
 
     return (
-        <Card sx={{ width: 800}}>
+        <Card sx={{ width: 800, margin: 1}}>
             <CardHeader
                 title={comment.name}
                 subheader={comment.email}

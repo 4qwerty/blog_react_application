@@ -20,8 +20,8 @@ class Posts {
         comments: []
     }
 
-    async createPosts(data: Post) {
-        await fetch(`https://blog-api-t6u0.onrender.com/posts`, {
+    createPosts(data: Post) {
+        fetch(`https://blog-api-t6u0.onrender.com/posts`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -71,8 +71,8 @@ class Posts {
             });
     }
 
-    async updatePosts(data: { title: string | undefined; body: string | undefined }, id: number | undefined) {
-        await fetch(`https://blog-api-t6u0.onrender.com/posts/${id}`, {
+    updatePosts(data: { title: string | undefined; body: string | undefined }, id: number | undefined) {
+        fetch(`https://blog-api-t6u0.onrender.com/posts/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

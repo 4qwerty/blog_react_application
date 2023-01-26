@@ -19,7 +19,7 @@ const CommentPage = observer(() => {
 
     useEffect(() => {
         posts.retrievePost(postId)
-    }, [])
+    }, [extendedPostData])
 
     return (
         <div className='comment-box'>

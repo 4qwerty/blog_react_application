@@ -9,7 +9,7 @@ const PostsList: React.FC = observer(() => {
 
     useEffect(() => {
         posts.getPosts()
-    }, [])
+    }, [postData])
 
     return (
         <>
