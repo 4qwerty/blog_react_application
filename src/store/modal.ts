@@ -9,8 +9,8 @@ class Modal {
     isOpenAddPostModal = false
     isOpenEditPostModal = false
     isOpenSuccessModal = false
-    isOpenDeletePostModal = false
-    postToEdit: PostModel | null= null
+    isOpenAddCommentModal = false
+    postToEdit: PostModel | null = null
 
 
     openAddPostModal() {
@@ -32,11 +32,11 @@ class Modal {
     closeSuccessModal() {
         this.isOpenSuccessModal = false
     }
-    openDeletePostModal() {
-        this.isOpenDeletePostModal = true
+    openAddCommentModal() {
+        this.isOpenAddCommentModal = true
     }
-    closeDeletePostModal() {
-        this.isOpenDeletePostModal = false
+    closeAddCommentModal() {
+        this.isOpenAddCommentModal = false
     }
 }
 

@@ -6,10 +6,9 @@ import Form from 'react-bootstrap/Form'
 import modal from "../../../store/modal";
 import posts from "../../../store/posts";
 import {Button} from "@mui/material";
-import './AddPostForm.css'
+import './add-post-form.css'
 
 const AddPostForm = observer(() => {
-
     const formik = useFormik({
         initialValues: {
             title: '',
@@ -26,7 +25,7 @@ const AddPostForm = observer(() => {
         }),
 
         onSubmit: (data) => {
-                posts.createPosts(data).then(() => {
+            posts.createPosts(data).then(() => {
                 posts.getPosts()
             })
 

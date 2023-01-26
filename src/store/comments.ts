@@ -1,14 +1,14 @@
 import { makeAutoObservable } from 'mobx'
-import {ExtendedPostModel, PostModel} from '../types/Posts'
 import {CommentsModel} from "../types/Comments";
+import {PostModel} from "../types/Posts";
 
 class Comments {
     constructor() {
         makeAutoObservable(this)
     }
 
-    async createPosts(data: CommentsModel) {
-        await fetch(`https://blog-api-t6u0.onrender.com/comments`, {
+    createComment(data: CommentsModel) {
+        fetch(`https://blog-api-t6u0.onrender.com/comments`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

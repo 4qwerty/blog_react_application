@@ -1,5 +1,5 @@
 import HomePage from "../components/HomePage/HomePage";
-import Comment from "../components/Comment/Comment";
+import CommentPage from "../components/CommentPage/CommentPage";
 export const publicRotes = [
     {
         path: "/home",
@@ -7,6 +7,6 @@ export const publicRotes = [
     },
     {
         path: "/comment",
-        Component: Comment,
+        Component: CommentPage,
     },
 ]

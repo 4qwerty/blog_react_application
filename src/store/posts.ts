@@ -1,5 +1,6 @@
 import { makeAutoObservable } from 'mobx'
 import {ExtendedPostModel, PostModel} from '../types/Posts'
+import {CommentsModel} from "../types/Comments";
 
 
 interface Post {
@@ -12,7 +13,12 @@ class Posts {
     }
 
     posts: PostModel[] = []
-    extendedPost: ExtendedPostModel | null = null
+    extendedPost: ExtendedPostModel = {
+        id: 0,
+        title: '',
+        body: '',
+        comments: []
+    }
 
     async createPosts(data: Post) {
         await fetch(`https://blog-api-t6u0.onrender.com/posts`, {

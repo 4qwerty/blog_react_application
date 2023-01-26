@@ -3,15 +3,17 @@ import { useLocation } from 'react-router-dom'
 import {observer} from "mobx-react-lite";
 import posts from '../../store/posts'
 import {CommentsModel} from "../../types/Comments";
-import CommentCard from "../CommentList/CommentCard";
-import {Grid, Typography} from '@mui/material';
-import './Comment.css'
+import CommentCard from "../CommentCard/CommentCard";
+import {Button, Grid, Typography} from '@mui/material';
+import './comment-page.css'
+import AddBoxIcon from "@mui/icons-material/AddBox";
+import modal from "../../store/modal";
+import AddCommentModal from "../Modal/AddCommentModal";
 
 
-const Comment = observer(() => {
+const CommentPage = observer(() => {
     const state = useLocation()
     const postId = state.state
-
     const extendedPostData = posts.extendedPost
     const comments: CommentsModel[] | undefined = extendedPostData?.comments
 
@@ -31,6 +33,13 @@ const Comment = observer(() => {
                 </Typography>
             </div>
 
+            <Button
+                variant="outlined"
+                startIcon={<AddBoxIcon />}
+                onClick={() => modal.openAddCommentModal()}
+            >
+                Add comment
+            </Button>
 
             {comments?.map((comment) => (
                 <Grid
@@ -41,8 +50,10 @@ const Comment = observer(() => {
                         comment={comment}/>
                 </Grid>
             ))}
+
+            <AddCommentModal/>
         </div>
     );
 });
 
-export default Comment;
+export default CommentPage;
